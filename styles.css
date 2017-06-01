@@ -12,8 +12,8 @@ body {
 
 #messagearea {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   color: rgb(83, 175, 19);
 }
 
@@ -21,7 +21,7 @@ table {
   position: absolute;
   left: 173px;
   top: 98px;
-  border-spacing: 0px;
+  border-spacing: 0;
 }
 
 td {
@@ -31,8 +31,8 @@ td {
 
 form {
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  bottom: 0;
+  right: 0;
   padding: 15px;
   background-color: rgb(83,275, 29);
 }
@@ -41,4 +41,11 @@ form input {
   background-color: rgb(152, 207, 113);
   border-color: rgb(83, 175, 19);
   font-size: 1em;
+}
+
+.hit {
+  background: url("images/ship.png") no-repeat center center;
+}
+.miss {
+  background: url("images/miss.png") no-repeat center center;
 }
