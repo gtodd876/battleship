@@ -1,19 +1,19 @@
-// var view = {
-//   displayMessage: function(msg) {
-//     var messageArea = document.getElementById("messageArea");
-//     messageArea.innerHTML = msg;
-//   },
-//   displayHit: function(location) {
-//     var cell = document.getElementById(location);
-//     cell.setAttribute("class", "hit");
-//   },
-//   displayMiss: function(location) {
-//     var cell = document.getElementById(location);
-//     cell.setAttribute("class", "miss");
-//   }
-// };
-//
-//
+var view = {
+  displayMessage: function(msg) {
+    var messageArea = document.getElementById("messageArea");
+    messageArea.innerHTML = msg;
+  },
+  displayHit: function(location) {
+    var cell = document.getElementById(location);
+    cell.setAttribute("class", "hit");
+  },
+  displayMiss: function(location) {
+    var cell = document.getElementById(location);
+    cell.setAttribute("class", "miss");
+  }
+};
+
+
   var model = {
     boardsize: 7,
     numShips: 3,
@@ -61,7 +61,11 @@
       processGuess: function(guess) {
         var location = parseGuess(guess);
         if (location) {
-
+          this.guesses++;
+          var hit = model.fire(location);
+          if (hit && model.shipsSunk === model.numShips) {
+            view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses");
+          }
         }
       }
     };
@@ -84,12 +88,25 @@
       }
       return null;
     };
-  console.log(parseGuess("A0"));
-  console.log(parseGuess("B6"));
+  //   Testing parseGuess
+  // console.log(parseGuess("A0"));
+  // console.log(parseGuess("B6"));
+
+  // Testing the Controller
+  controller.processGuess("A0");
+  controller.processGuess("A6");
+
+
+
+
+  //Testing Model Object
+
   // model.fire("53");
   // model.fire("06");
   // model.fire("16");
   // model.fire("26");
+  // Testing View Object
+
   // view.displayMiss("00");
   // view.displayHit("34");
   // view.displayMiss("55");
