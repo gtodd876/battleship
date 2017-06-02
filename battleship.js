@@ -1,3 +1,4 @@
+// Takes care of displaying a message in left corner as well as a graphic on the game board after you take a guess
 var view = {
   displayMessage: function(msg) {
     var messageArea = document.getElementById("messageArea");
@@ -13,7 +14,7 @@ var view = {
   }
 };
 
-
+//The Model maintains the state of the gameboard
   var model = {
     boardsize: 7,
     numShips: 3,
@@ -54,7 +55,7 @@ var view = {
       return true;
     }
   };
-
+    //the controller passes to players guesses to the model as well as keep track if the game is over yet
     var controller = {
       guesses: 0,
 
@@ -69,6 +70,7 @@ var view = {
         }
       }
     };
+    //Convert the player's guess from something like "C3" to "33" ...A=0, B=1, C=3 and so on
     function parseGuess(guess) {
       var alphabet = ["A","B","C","D","E","F","G"];
 
@@ -88,6 +90,7 @@ var view = {
       }
       return null;
     };
+    //These next two function deal with capturing the string input from the player once they click the fire button
     function init() {
       var fireButton = document.getElementById("fireButton");
       fireButton.onclick = handleFireButton;
