@@ -10,7 +10,8 @@ body {
   background: url("images/board.jpg") no-repeat;
 }
 
-#messagearea {
+#messageArea {
+  font-family: sans-serif;
   position: absolute;
   top: 0;
   left: 0;
