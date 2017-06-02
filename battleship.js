@@ -54,12 +54,17 @@
       return true;
     }
   };
-//
-//     var controller = {
-//       guesses: 0,
-//
-//       processGuess: function(guess) {
-//     },
+
+    var controller = {
+      guesses: 0,
+
+      processGuess: function(guess) {
+        var location = parseGuess(guess);
+        if (location) {
+
+        }
+      }
+    };
     function parseGuess(guess) {
       var alphabet = ["A","B","C","D","E","F","G"];
 
