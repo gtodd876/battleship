@@ -88,21 +88,32 @@ var view = {
       }
       return null;
     };
+    function init() {
+      var fireButton = document.getElementById("fireButton");
+      fireButton.onclick = handleFireButton;
+    }
+    function handleFireButton() {
+      var guessInput = document.getElementById("guessInput");
+      var guess = guessInput.value;
+      controller.processGuess(guess);
+      guessInput.value = "";
+    }
+    window.onload = init;
   //   Testing parseGuess
   // console.log(parseGuess("A0"));
   // console.log(parseGuess("B6"));
 
   // Testing the Controller
-  controller.processGuess("A0");
-  controller.processGuess("A6");
-  controller.processGuess("B6");
-  controller.processGuess("C6");
-  controller.processGuess("C4");
-  controller.processGuess("D4");
-  controller.processGuess("E4");
-  controller.processGuess("B0");
-  controller.processGuess("B1");
-  controller.processGuess("B2");
+  // controller.processGuess("A0");
+  // controller.processGuess("A6");
+  // controller.processGuess("B6");
+  // controller.processGuess("C6");
+  // controller.processGuess("C4");
+  // controller.processGuess("D4");
+  // controller.processGuess("E4");
+  // controller.processGuess("B0");
+  // controller.processGuess("B1");
+  // controller.processGuess("B2");
 
 
 
